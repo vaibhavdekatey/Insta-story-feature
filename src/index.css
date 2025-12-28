@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@keyframes fillProgress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
