@@ -36,8 +36,7 @@ const StoryContainer = ({
 
             <button
               disabled={currentImageIndex === 0}
-              onClick={(e) => {
-                e.stopPropagation();
+              onClick={() => {
                 handlePrev();
               }}
               className={`absolute left-2 top-1/2 -translate-y-1/2 z-50 p-2 rounded-full transition-all duration-300
@@ -66,8 +65,7 @@ const StoryContainer = ({
 
             <button
               disabled={currentImageIndex === images.length - 1}
-              onClick={(e) => {
-                e.stopPropagation();
+              onClick={() => {
                 handleNext();
               }}
               className={`absolute right-2 top-1/2 -translate-y-1/2 z-50 p-2 rounded-full transition-all duration-300
@@ -95,8 +93,7 @@ const StoryContainer = ({
             </button>
 
             <button
-              onClick={(e) => {
-                e.stopPropagation();
+              onClick={() => {
                 deleteImage(images[currentImageIndex].id);
               }}
               className="absolute top-6 left-4 z-50 p-2 text-red-400 hover:text-red-500 bg-black/20 hover:bg-black/40 rounded-full backdrop-blur-md transition-all active:scale-90"
@@ -125,7 +122,7 @@ const StoryContainer = ({
 
             <img
               key={`img-${currentImageIndex}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover animate-story"
               src={images[currentImageIndex].url}
               alt="Full view"
             />
