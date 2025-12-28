@@ -37,6 +37,13 @@ function App() {
     );
   };
 
+  const deleteImage = (id) => {
+    setImages((prev) => prev.filter((img) => img.id !== id));
+    if (images[currentImageIndex]?.id === id) {
+      setcurrentImageIndex(null);
+    }
+  };
+
   useEffect(() => {
     if (currentImageIndex !== null && images.length > 0) {
       const timer = setTimeout(() => {
@@ -64,6 +71,7 @@ function App() {
         handlePrev={handlePrev}
         handleNext={handleNext}
         setcurrentImageIndex={setcurrentImageIndex}
+        deleteImage={deleteImage}
       />
 
       <Footer />

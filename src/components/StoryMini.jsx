@@ -3,7 +3,7 @@ import React from "react";
 const StoryMini = ({ images, handleImages, handleStory }) => {
   return (
     <>
-      <div className="flex flex-row items-center gap-4 overflow-x-auto pb-4">
+      <div className="flex flex-row items-center gap-4 overflow-x-auto pb-4 px-4">
         <label htmlFor="file-upload" className="cursor-pointer shrink-0">
           <span className="flex items-center justify-center h-14 w-14 rounded-full border-2 border-dashed border-white/50 hover:border-white transition-colors">
             <svg

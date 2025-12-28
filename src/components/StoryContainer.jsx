@@ -6,10 +6,11 @@ const StoryContainer = ({
   handlePrev,
   handleNext,
   setcurrentImageIndex,
+  deleteImage,
 }) => {
   return (
     <>
-      <div className="relative border-white/20 border-2 aspect-9/16 h-[70vh] w-auto rounded-xl overflow-hidden mt-6 group bg-black">
+      <div className="relative border-white/20 border-2 aspect-9/16 w-[350px] mx-auto rounded-xl overflow-hidden mt-6 group bg-black">
         {currentImageIndex !== null ? (
           <div className="relative w-full h-full">
             <button
@@ -89,6 +90,26 @@ const StoryContainer = ({
                   strokeLinejoin="round"
                   strokeWidth={2}
                   d="m8 4l8 8l-8 8"
+                ></path>
+              </svg>
+            </button>
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                deleteImage(images[currentImageIndex].id);
+              }}
+              className="absolute top-6 left-4 z-50 p-2 text-red-400 hover:text-red-500 bg-black/20 hover:bg-black/40 rounded-full backdrop-blur-md transition-all active:scale-90"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width={24}
+                height={24}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6z"
                 ></path>
               </svg>
             </button>
