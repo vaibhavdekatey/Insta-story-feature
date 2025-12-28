@@ -3,9 +3,10 @@ import "./App.css";
 import StoryMini from "./components/StoryMini";
 import StoryContainer from "./components/StoryContainer";
 import Footer from "./components/Footer";
+import { imageData } from "./imageData";
 
 function App() {
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState(imageData);
   const [currentImageIndex, setcurrentImageIndex] = useState(null);
 
   const handleImages = (e) => {
@@ -16,7 +17,7 @@ function App() {
         url: URL.createObjectURL(file),
         name: file.name,
       };
-      setImages((prev) => [...prev, newImage]);
+      setImages((prev) => [newImage, ...prev]);
       e.target.value = "";
     }
   };

@@ -9,7 +9,7 @@ const StoryContainer = ({
 }) => {
   return (
     <>
-      <div className="relative border-white/20 border-2 aspect-9/16 h-[70vh] rounded-xl overflow-hidden mt-6 group bg-black">
+      <div className="relative border-white/20 border-2 aspect-9/16 h-[70vh] w-auto rounded-xl overflow-hidden mt-6 group bg-black">
         {currentImageIndex !== null ? (
           <div className="relative w-full h-full">
             <button
